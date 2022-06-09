@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Today Date using new Date = {{ date }}</h1>
-    <h1>Today Date using moment = {{ momentDate }}</h1>
+    <!-- <h1>Today Date using moment = {{ momentDate }}</h1> -->
+    <div v-text="$moment()"></div>
+    <!-- <div v-text="'ABCD'"></div> -->
   </div>
 </template>
 
@@ -14,8 +16,14 @@ export default Vue.extend({
   data() {
     return {
       date: new Date(),
-      momentDate: moment.weekdays(),
+      momentDate: null,
     };
+  },
+  methods: {
+    setDate() {
+      // Not working
+      // this.momentDate = this.$moment();
+    },
   },
 });
 </script>
